@@ -1,0 +1,26 @@
+{% extends 'shop/basic.html' %}
+
+{% block body %}
+<body>
+<h2 style="text-align: center">Feedback</h2>
+<div class="container">
+
+<form method="POST">
+{% csrf_token %}
+    Your name: <br>
+    <input type="text" name="name"><br>
+    <br>
+    
+    Your email: <br>
+    <input type="email" name="email"><br>
+    <br>
+    
+    Your comments: <br>
+    <textarea name="comments" rows="15" cols="50"></textarea><br><br>
+    
+    <button style="margin-bottom:22px " type="submit" class="btn btn-primary" >Send</button>
+     
+    </form>
+</div>
+</body>
+{% endblock body %}

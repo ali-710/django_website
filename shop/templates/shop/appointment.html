@@ -1,0 +1,31 @@
+{% extends 'shop/basic.html' %}
+
+
+{% block css %}
+h1{
+    margin-top: 22px;
+}
+{% endblock css %}
+
+
+{% block body %}
+
+
+
+<center>
+<h1>Review Your Information</h1>
+
+<strong>Your Name: </strong>{{yourname}}<br/>
+<strong>Phone: </strong>{{phone}}<br/>
+<strong>When: </strong>{{appointmentdate}}<br/>
+<strong>Appointment Day: </strong>{{appointtime}}<br/>
+<strong>Your Message: </strong>{{message}}<br/>
+
+
+
+<br/><br/>
+<strong>Note:</strong> This appointment hasn't been set yet. We will contact you shortly via telephone to confirm your appointment.
+</center>
+<br/><br/><br/><br/>
+{% endblock body %}
+

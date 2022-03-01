@@ -1,0 +1,113 @@
+{% extends 'shop/basic.html' %}
+{% block title%}Zaidi Homeo Clinic{% endblock %}
+
+
+{% block css %}
+h2{
+    text-align: center;
+    margin-top: 22px;
+}
+
+
+{% endblock css %}
+{% block body %}
+
+
+<h2>For Prepared Homeopathic Medicine</h2>
+<div class="container">
+    <div class="col my-4">
+        
+
+        <h4>Personal Detail</h4>
+        <form method="post">{% csrf_token %}
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputname">Name</label>
+                    <input type="text" class="form-control"  name="yourname" placeholder="Name", required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control"  name="youremail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputZip">Number</label>
+                <input type="tel" class="form-control"  name="yourphone" required>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control"  name="youraddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+                <label for="inputnote">Special Note</label>
+                <input type="text" class="form-control"  name="yourspecialnote" placeholder="">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control"  name="yourcity">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <input type="text" class="form-control"  name="yourstate"  placeholder="Enter State">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Postal</label>
+                    <input type="text" class="form-control"  name="postalcode">
+                </div>
+            </div>
+           
+
+            <h4>Medicine Information</h4>
+            <div class="form-group">
+                <label for="inputAddress">Drugname</label>
+                <input type="text" class="form-control"  name="drugname" placeholder="Drugname">
+            </div>
+            <div class="form-group">
+                <label for="inputPotency">Potency</label>
+                <input type="text" class="form-control"  name="potency" placeholder="Enter Potency">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Prepared in(pallets, diskets mother tincture)</label>
+                <input type="text" class="form-control"  name="prepared" placeholder="pallets, diskets mother tincture">
+            </div>
+
+            <div class="form-group">
+                <select name ="quantity" class="form-control">
+                    <option value="Select Quantity">Select Quantity</option>
+                    <option value="5ml">5ml</option>
+                    <option value="15ml">15ml</option>
+                    <option value="20ml">20ml</option>
+                    <option value="30ml">30ml</option>
+                    <option value="40ml">40ml</option>
+                    <option value="50ml">50ml</option>
+                    <option value="60ml">60ml</option>
+                    <option value="80ml">80ml</option>
+                    <option value="90ml">90ml</option>
+                    <option value="100ml">100ml</option>
+                    <option value="200ml">200ml</option>
+                  </select>
+            </div>
+
+            
+            <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+
+        
+    </div>
+</div>
+</div>
+
+<div class="container">
+<Centre>
+<strong style="text-align: center">Note 1:</strong> For quantity measurements
+Pallets and diskets Available in drams
+(1dram=3.1ml) × 1 dram vial
+Mother tincture and liquid drug available in 15ml
+(15 ml =1 bottle)</Centre>
+</div>
+
+{% endblock body %}
+

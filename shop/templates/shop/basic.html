@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>{% block title%} Zaidi Homeo Clinic{% endblock %}</title>
+     <style>
+       {% block css %} {% endblock %}
+  </style>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script>
+  </head>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/shop"> <i class="fa fa-medkit" style="font-size:26px; color: red"></i>   Zaidi Homeo Clinic</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/shop">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" href="/shop/about">About Us</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Products
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/shop/product">Buy Medicines</a>
+          <a class="dropdown-item" href="/shop/prepare">Prepared Homeopathic Medicine</a>
+         
+        </div>
+      </li>
+    
+
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" href="/shop/tracker">Tracker</a>
+      </li>
+
+
+   
+
+
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link" href="/shop/detail">Online Consultation</a>
+      </li>
+
+      
+
+
+    </ul>
+    <form method'get' action="/shop/search/" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
+    sagittis lacus vel augue laoreet rutrum faucibus.">
+    
+    
+      Cart(<span id="cart">0</span>)
+    </button>
+  </div>
+</nav>
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <strong>Message: </strong> {{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
+  {% include 'shop/messages.html' %}
+
+  {% block body %} {% endblock %}
+
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    {% block js %} {% endblock %}
+  </body>
+</html>
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+line-height: 1.5;
+font-family: 'Poppins', sans-serif;
+}
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+.container{
+max-width: 1170px;
+margin:auto;
+}
+.row{
+display: flex;
+flex-wrap: wrap;
+}
+ul{
+list-style: none;
+}
+.footer{
+background-color: #24262b;
+  padding: 70px 0;
+}
+.footer-col{
+ width: 25%;
+ padding: 0 15px;
+}
+.footer-col h4{
+font-size: 18px;
+color: #ffffff;
+text-transform: capitalize;
+margin-bottom: 35px;
+font-weight: 500;
+position: relative;
+}
+.footer-col h4::before{
+content: '';
+position: absolute;
+left:0;
+bottom: -10px;
+background-color: #e91e63;
+height: 2px;
+box-sizing: border-box;
+width: 50px;
+}
+.footer-col ul li:not(:last-child){
+margin-bottom: 10px;
+}
+.footer-col ul li a{
+font-size: 16px;
+text-transform: capitalize;
+color: #ffffff;
+text-decoration: none;
+font-weight: 300;
+color: #bbbbbb;
+display: block;
+transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+color: #ffffff;
+padding-left: 8px;
+}
+.footer-col .social-links a{
+display: inline-block;
+height: 40px;
+width: 40px;
+background-color: rgba(255,255,255,0.2);
+margin:0 10px 10px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: #ffffff;
+transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+color: #24262b;
+background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+.footer-col{
+  width: 50%;
+  margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+.footer-col{
+  width: 100%;
+}
+}
+
+
+
+
+
+</style>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+<footer class="footer" style="margin-top: 1in">
+   <div class="container">
+     <div class="row">
+       <div class="footer-col">
+         <h4>Zaidi Homeo Hall</h4>
+         <ul>
+           <li><a href="/shop/about">About Us</a></li>
+           <li><a href="/shop/feedback">Feedback</a></li>
+           
+         </ul>
+       </div>
+       <div class="footer-col">
+              <h4>Contact Us</h4>
+              <ul style="margin-right: 22px">
+                  
+                  <li><a href="#"><i class="fas fa-home"></i> station road
+                    Mankapur, Uttar Pradesh 271302 </a></li>
+                  <li><a href="#"><i class="fas fa-envelope"></i> salizaidi48@gmail.com </a></li>
+                  <li><a href="#"><i class="fas fa-envelope"></i> zaidihomeo@gmail.com </a></li>
+                  <li><a href="#"><i class="fas fa-phone"></i> +91 7355372117</a></li>
+                  <li><a href="#"><i class="fas fa-phone"></i> +91 6390088382</a></li>
+              </ul>
+          </div>
+       
+       <div class="footer-col">
+         <h4>follow us</h4>
+         <div class="social-links">
+           <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+           <a href="https://twitter.com/login?lang=en"><i class="fab fa-twitter"></i></a>
+           <a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+           
+         </div>
+       </div>
+       <div class="footer-col">
+        <h4>Google Map</h4>
+        <ul>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.5170101685862!2d82.21478831488618!3d27.045423983070588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399755f8dba860b7%3A0x1b45262c9ae045f!2sZaidi%20Homeo%20Hall!5e0!3m2!1sen!2sin!4v1643143585288!5m2!1sen!2sin" width="250" height="200" style="border:0;" allowfullscreen="" ></iframe>
+      </ul>
+    </div>
+  
+    <div class="container" style="text-align: center;">
+    <h6 style="color: white;">Copyright © 2022 Ali Mehndi. All Rights Reserved.</h6>
+    </div>
+  
+  </div>
+   
+   
+ 
+</div>
+  
+</footer>
+
+
